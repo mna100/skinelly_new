@@ -490,9 +490,6 @@ form {
     }
 
     &__image {
-      @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
-        display: none;
-      }
 
       img {
         display: block;
@@ -505,17 +502,6 @@ form {
       }
     }
 
-    &__image-mobile {
-      display: none;
-
-      img {
-        width: 100%;
-      }
-
-      @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
-        display: block;
-      }
-    }
   }
 
   &-catalog {
@@ -902,6 +888,12 @@ form {
       }
 
       @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+         .form__input {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-bottom: 1rem;
+          }
+
         &-desktop {
           display: none;
         }
@@ -909,11 +901,6 @@ form {
           padding: 1.5rem 2rem;
           display: block;
 
-          .form__input {
-            flex: 0 0 100%;
-            max-width: 100%;
-            margin-bottom: 0rem;
-          }
 
           .form__submit input {
             margin-top: 0;

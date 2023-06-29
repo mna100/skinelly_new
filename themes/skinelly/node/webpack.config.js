@@ -1,8 +1,8 @@
-const path                  = require('path');
-const webpack               = require('webpack');
-const MiniCssExtractPlugin  = require('mini-css-extract-plugin');
-const CssMinimizerPlugin    = require('css-minimizer-webpack-plugin');
-const TerserPlugin          = require("terser-webpack-plugin");
+const path = require('path');
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     entry: "./src/index.js",
@@ -39,14 +39,15 @@ module.exports = {
                 use: [
                     {
                         loader: 'url-loader',
-
                     },
                 ],
             },
-            {
-                test: /\.(woff|woff2|ttf|eot|svg)?$/,
-                type: 'asset/resource'
-            },
+             {
+                 test: /\.(woff|woff2|ttf|eot|svg)?$/,
+                 type: 'asset/resource'
+             },
+
+
         ],
     },
     devtool: "source-map",
@@ -56,6 +57,10 @@ module.exports = {
             filename: 'public.css',
         })
     ],
+    stats: {
+        errorDetails: true,
+        children: true
+    },
     optimization: {
         chunkIds: "size",
         moduleIds: "size",
@@ -67,7 +72,7 @@ module.exports = {
                     preset: [
                         "default",
                         {
-                            discardComments: { removeAll: true },
+                            discardComments: {removeAll: true},
                         },
                     ],
                 }

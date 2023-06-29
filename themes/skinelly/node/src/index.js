@@ -188,15 +188,7 @@ if (document.querySelector("form.fetch")) {
 
                 let phone = form.querySelector("input[name='phone']").value;
                 let name = form.querySelector("input[name='name']").value;
-                // let fileAttach;
-                // if(form.querySelector('input[type=file]')) {
-                //   fileAttach = form.querySelector('input[type=file]');
-                // }
-                // if (fileAttach) {
-                //   fileAttach.value = '';
-                //   fileAttach.closest('.attachment').querySelector('.file__name').innetText = '';
-                //   fileAttach.closest('.attachment').querySelector('.file__info').classList.remove('is-loaded');
-                // }
+
                 if (phone.length[17] === "_" || phone.length === 0) {
                     document.querySelector("input[name='phone']").classList.add("is-error");
                 } else if (name.length === 0) {
@@ -212,7 +204,7 @@ if (document.querySelector("form.fetch")) {
                             .setAttribute("disabled", "");
 
                     let data = new FormData(form);
-                    // mna100("email", data, (r) => {
+
                     leadgets('lead', data, (r) => {
                         console.log(r)
                         if (r.status === 1) {
@@ -266,10 +258,10 @@ if (document.querySelector("form.fetch")) {
                                 Fancybox.close();
                             }, 5000);
 
-                           /* if (typeof ym == "function") {
-                                ym("XXXXXXXX", "reachGoal", yaGoal);
-                                console.log("Цель достигнута: " + yaGoal);
-                            }*/
+                            /* if (typeof ym == "function") {
+                                 ym("XXXXXXXX", "reachGoal", yaGoal);
+                                 console.log("Цель достигнута: " + yaGoal);
+                             }*/
                             if (typeof gtag == "function") {
                                 //gtag("event", "form_lead", {"event_category": "lead", "event_action": "zayavka"});
                             }

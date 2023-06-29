@@ -38,7 +38,7 @@ $id = get_the_ID();
 								</div>
 								<div class="contacts-main__form__col-2">
 									<div class="form__input">
-										<textarea name="quetion" placeholder="Опишите Ваш запрос"></textarea>
+										<textarea name="question" placeholder="Опишите Ваш запрос"></textarea>
 									</div>
 								</div>
 							</div>
@@ -60,7 +60,7 @@ $id = get_the_ID();
 									<input type="tel" name="phone" placeholder="Номер телефона" inputmode="text">
 								</div>
 								<div class="form__input">
-									<textarea name="quetion" placeholder="Опишите Ваш запрос"></textarea>
+									<textarea name="question " placeholder="Опишите Ваш запрос"></textarea>
 								</div>
 								<div class="form__submit">
 									<input type="submit" value="отправить" class="button button_white">

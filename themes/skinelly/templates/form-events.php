@@ -12,16 +12,21 @@
             </div>
             <div class="form__policy">
                 <input type="checkbox" id="agreed" name="agreed" value="y" checked>
-                <label for="agreed">
-                    <span>Заполняя форму, вы принимаете условия <a href="">политики конфединциальности</a></span>
-                </label>
+				<? if ( get_field( "form_text", 'options' ) ) : ?>
+                    <label for="agreed">
+                    <span class="home-form__agree">
+                       <? the_field( "form_text", 'options' ); ?>
+                    </span>
+                    </label>
+				<? endif; ?>
             </div>
             <div class="form__input">
                 <button type="submit" class="button button_white">Отправить</button>
             </div>
             <div class="form__hidden">
                 <input type="hidden" name="email_title" value="Записаться на мероприятие">
-                <input type="hidden" name="events_name" value="<?= (get_meta($id)["h1"]) ? get_meta($id)["h1"] : the_title(); ?>">
+                <input type="hidden" name="events_name" value="<?= ( get_meta( $id )["h1"] ) ? get_meta( $id )["h1"]
+					: the_title(); ?>">
                 <input type="hidden" name="ya_goal">
             </div>
         </form>
