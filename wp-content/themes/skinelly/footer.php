@@ -21,7 +21,7 @@
 
 
             <?
-            //контакты
+            // контакты
             ?>
             <div class="footer__data mb-block">
                 <div class="footer__address">
