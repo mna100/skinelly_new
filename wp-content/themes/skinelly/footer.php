@@ -9,7 +9,8 @@
     <div class="container">
         <div class="footer__inner">
 
-            <? //logo
+            <?
+            //logo
             ?>
             <div class="footer__logo mb-block">
                 <a href="/">
