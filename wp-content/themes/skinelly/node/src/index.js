@@ -178,16 +178,16 @@ if (document.querySelector(".file-delete")) {
 
 function sendJSON(data) {
     let xhr = new XMLHttpRequest();
-    let url = "https://directalab.ru/b24/forms/ajax.php";
+    let url = "/wp-content/themes/skinelly/ajax/bitrix_send.php";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.onreadystatechange = function () {
+    xhr.addEventListener("readystatechange", () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            console.log(this.responseText);
-            console.log(JSON.stringify(data));
+            console.log(xhr.responseText);
         }
-    };
+    });
     var json = JSON.stringify(data);
+
     xhr.send(json);
 }
 
@@ -222,14 +222,15 @@ if (document.querySelector("form.fetch")) {
 
                     let send = {};
                     for (const [key, value] of data.entries()) {
-                        console.log(key, value);
                         if (key == 'question') {
-                            send.comment = value;
+                            send['comment'] = value;
                         }
-                        send.key = value;
+                        if (key == 'name' || key == 'phone' || key == 'form_id') {
+                            send[key] = value;
+                        }
                     }
+
                     send.ref = window.location.pathname;
-                    console.log(send)
 
                     leadgets('lead', data, (r) => {
                         console.log(r)
@@ -276,6 +277,7 @@ if (document.querySelector("form.fetch")) {
                                     if (el.name != "agreement") el.checked = false;
                                 });
                             }
+
                             //отправка данных в битрикс 24
                             sendJSON(send);
 
