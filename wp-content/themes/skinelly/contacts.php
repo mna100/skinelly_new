@@ -24,6 +24,7 @@ $id = get_the_ID();
 
 					<div class="contacts-main__form contacts-main__form-desktop">
 						<form class="form fetch">
+                             <input type="hidden" name="form_id" value="8">
 							<div class="contacts-main__form__row">
 								<div class="contacts-main__form__col-1">
 									<div class="form__input">

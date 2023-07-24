@@ -14,6 +14,7 @@
         <div class="home-form__wrap">
 
             <form class="form fetch" style="background: <?= $colorProduct; ?>">
+                <input type="hidden" name="form_id" value="7">
                 <div class="home-form__row">
                     <div class="home-form__col form__input">
                         <input type="text" name="name" placeholder="Ваше имя">

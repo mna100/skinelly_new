@@ -70,6 +70,7 @@
 <div id="popup" class="modal" style="display: none">
     <div class="modal__content">
         <form class="form form-modal fetch">
+             <input type="hidden" name="form_id" value="6">
             <div class="form__input-wrap">
                 <div class="form__input">
                     <input type="tel" name="phone" class="phone-mask" placeholder="Телефон" autocomplete="off" required>

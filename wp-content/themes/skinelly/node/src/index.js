@@ -176,6 +176,21 @@ if (document.querySelector(".file-delete")) {
     });
 }
 
+function sendJSON(data) {
+    let xhr = new XMLHttpRequest();
+    let url = "https://directalab.ru/b24/forms/ajax.php";
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(this.responseText);
+            console.log(JSON.stringify(data));
+        }
+    };
+    var json = JSON.stringify(data);
+    xhr.send(json);
+}
+
 /**
  * Form
  */
@@ -204,6 +219,17 @@ if (document.querySelector("form.fetch")) {
                             .setAttribute("disabled", "");
 
                     let data = new FormData(form);
+
+                    let send = {};
+                    for (const [key, value] of data.entries()) {
+                        console.log(key, value);
+                        if (key == 'question') {
+                            send.comment = value;
+                        }
+                        send.key = value;
+                    }
+                    send.ref = window.location.pathname;
+                    console.log(send)
 
                     leadgets('lead', data, (r) => {
                         console.log(r)
@@ -250,6 +276,8 @@ if (document.querySelector("form.fetch")) {
                                     if (el.name != "agreement") el.checked = false;
                                 });
                             }
+                            //отправка данных в битрикс 24
+                            sendJSON(send);
 
                             setTimeout(() => {
                                 fancyboxShow("#thanks", "inline");
@@ -258,11 +286,11 @@ if (document.querySelector("form.fetch")) {
                                 Fancybox.close();
                             }, 5000);
 
-                             if (typeof ym == "function") {
-                                 //ym("XXXXXXXX", "reachGoal", yaGoal);
-                                 ym("92035751", "reachGoal", yaGoal);
-                                 console.log("Цель достигнута: " + yaGoal);
-                             }
+                            if (typeof ym == "function") {
+                                //ym("XXXXXXXX", "reachGoal", yaGoal);
+                                ym("92035751", "reachGoal", yaGoal);
+                                console.log("Цель достигнута: " + yaGoal);
+                            }
                             if (typeof gtag == "function") {
                                 //gtag("event", "form_lead", {"event_category": "lead", "event_action": "zayavka"});
                             }
@@ -629,14 +657,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     var swiper2 = new Swiper(".slider-big", {
-      slidesPerView: 1,
-      loop: true,
-      navigation: {
-        nextEl: ".slider-big .swiper-button-next",
-        prevEl: ".slider-big .swiper-button-prev",
-      },
-      pagination: {
-        el: ".slider-big .swiper-pagination",
-      },
+        slidesPerView: 1,
+        loop: true,
+        navigation: {
+            nextEl: ".slider-big .swiper-button-next",
+            prevEl: ".slider-big .swiper-button-prev",
+        },
+        pagination: {
+            el: ".slider-big .swiper-pagination",
+        },
     });
-  });
+});
