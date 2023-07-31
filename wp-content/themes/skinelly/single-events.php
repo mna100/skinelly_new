@@ -23,9 +23,10 @@
                         <img src="<?= get_template_directory_uri() . '/public/calendar.svg'; ?>" alt="дата">
                         <span><?= substr(get_field("date", $id), 0, -5); ?></span>
                     </div>
+                    <?// debug(get_field("date", $id));?>
                     <div class="events__icons">
                         <img src="<?= get_template_directory_uri() . '/public/clock.svg'; ?>" alt="время">
-                        <span><?= substr(get_field("date", $id), 0, 11); ?></span>
+                        <span><?= substr(get_field("date", $id), 11, 5); ?></span>
                     </div>
 				<? endif; ?>
 				<? if (get_field('condition', $id)): ?>
