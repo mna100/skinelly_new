@@ -17,7 +17,7 @@
         <div class="container">
             <div class="catalog__prop">
 				<? foreach ( get_field( "drug_type_prop", "drug-types_" . get_queried_object()->term_id ) as $tag_tile ) : ?>
-                    <div class="catalog__prop-item">
+                    <div class="catalog__prop-item catalog__prop-item-main">
 						<? if ( $tag_tile["title"] ) : ?>
                             <div class="catalog__prop-title"><?= $tag_tile["title"] ?></div>
 						<? endif; ?>

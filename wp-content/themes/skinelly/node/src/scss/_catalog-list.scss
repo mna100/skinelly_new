@@ -70,6 +70,10 @@
   }
 }
 
+.catalog__prop-item-main::before {
+  display: none;
+}
+
 /*old*/
 .catalog {
   &__text-descr {
