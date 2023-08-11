@@ -200,21 +200,13 @@ if (document.querySelector("form.fetch")) {
   document.querySelectorAll("form.fetch").forEach((form) => {
     form.addEventListener("submit", (evt) => {
       evt.preventDefault();
+      console.log(432);
       let yaGoal = form.querySelector("input[name='ya_goal']").value;
       let phone = form.querySelector("input[name='phone']").value;
 
       if (phone.length[17] === "_" || phone.length === 0) {
         document.querySelector("input[name='phone']").classList.add("is-error");
       } else {
-        if (form.querySelector("input[type='submit']"))
-          form
-            .querySelector("input[type='submit']")
-            .setAttribute("disabled", "");
-        if (form.querySelector("button[type='submit']"))
-          form
-            .querySelector("button[type='submit']")
-            .setAttribute("disabled", "");
-
         let data = new FormData(form);
 
         let send = {};
@@ -242,14 +234,6 @@ if (document.querySelector("form.fetch")) {
             }
 
             Fancybox.close();
-            if (form.querySelector("input[type='submit']"))
-              form
-                .querySelector("input[type='submit']")
-                .removeAttribute("disabled", "");
-            if (form.querySelector("button[type='submit']"))
-              form
-                .querySelector("button[type='submit']")
-                .removeAttribute("disabled", "");
 
             form.querySelectorAll("input").forEach((inp) => {
               if (
