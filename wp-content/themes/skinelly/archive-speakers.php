@@ -1,4 +1,5 @@
 <?php
+/* Template Name:Спикеры */
 	get_header();
 	$id = get_post_type() . '_options';
 ?>
@@ -6,13 +7,46 @@
 
 <div class="news news_speakers">
     <div class="container">
+
+	<?php if(get_field('спикеры')) { ?>
+		
+        <div class="title-section">
+            <h1>
+				<?= ( get_meta( $id )["h1"] ) ? get_meta( $id )["h1"] : the_title(); ?>
+            </h1>
+        </div>
+		<div class="news-list mb-block">
+		<?php foreach(get_field('спикеры') as $post) { setup_postdata($post); ?>
+
+                        <div class="news-item">
+
+                            <a href="<?php the_permalink(); ?>" class="news-image mb-block">
+								<? $img = get_the_post_thumbnail( $post->ID, 'full' ); ?>
+								<? if ( $img ): ?>
+									<? echo $img; ?>
+								<? else: ?>
+                                    <img src="<?= get_template_directory_uri() . '/public/no-photo.png' ?>" alt="<? the_title(); ?>">
+								<? endif; ?>
+                            </a>
+                            <div class="news-info">
+                                <div class="news-title"><?= ( get_meta( $id )["title"] ) ? get_meta( $id )["title"]
+										: the_title(); ?></div>
+								<? if ( get_field( "spicker_text_all", $id ) ): ?>
+                                    <div class="news-text"><? the_field( "spicker_text_all", $id ); ?></div>
+								<? endif; ?>
+                                <a href="<?php the_permalink(); ?>" class="button button_tr news-btn">Подробнее</a>
+                            </div>
+
+                        </div>
+		<?php } wp_reset_postdata(); ?>
+		</div>
+		<?php } else { ?>
+		
         <div class="title-section">
             <h1>
 				<?= ( get_meta( $id )["h1"] ) ? get_meta( $id )["h1"] : the_archive_title(); ?>
             </h1>
         </div>
-
-
 		<?php
 
 			$args     = [
@@ -94,7 +128,7 @@
 			endif;
 		?>
 
-
+<?php } ?>
     </div>
 
 

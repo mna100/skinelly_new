@@ -19,6 +19,8 @@
 /wp-content/backups-dup-lite
 /wp-content/ai1wm-backups
 /wp-content/debug.log
+/wp-content/updraft
+
 
 /wp-admin/
 .htaccess
@@ -47,3 +49,16 @@
 /xmlrpc.php
 /xmlrpc.php
 /.gitignore
+
+ai1wm-backups
+backups-dup-lite
+languages
+plugins
+upgrade
+index.php
+uploads
+.idea
+themes/twentytwentytwo
+themes/index.php
+themes/skinelly/node/node_modules
+pass.txt

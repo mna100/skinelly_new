@@ -1,43 +1,67 @@
 @import "const.scss";
 
-.catalog__products-wrapper,
-.catalog__categories-wrapper {
+.catalog__products-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  @media screen and #{$ipadv}{
+  @media screen and #{$ipadv} {
     gap: 15px;
   }
-  @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+  @media screen and (max-width: 700px),
+    (max-width: 850px) and (max-height: 500px) {
     grid-template-columns: repeat(1, 1fr);
   }
-
 }
 
-.catalog__product,
-.catalog__category {
+.catalog__categories-wrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+
+  @media screen and #{$ipadv} {
+    gap: 15px;
+  }
+
+  @media screen and (max-width: 700px),
+    (max-width: 850px) and (max-height: 500px) {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.catalog__product {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background: #FFFFFF;
-  border: 1px solid #E0E0E0;
-  box-shadow: 0 103px 41px rgba(153, 153, 153, 0.01), 0px 58px 35px rgba(153, 153, 153, 0.05), 0px 26px 26px rgba(153, 153, 153, 0.09);
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 103px 41px rgba(153, 153, 153, 0.01),
+    0px 58px 35px rgba(153, 153, 153, 0.05),
+    0px 26px 26px rgba(153, 153, 153, 0.09);
   border-radius: 6px;
   padding: 25px 25px 45px;
   text-decoration: unset;
+}
 
+.catalog__product,
+.catalog__category {
   .button {
-    margin-top: 25px;
-    @media screen and #{$ipadv}{
+    @media screen and #{$ipadv} {
       font-size: 14px;
       padding-left: 10px;
       padding-right: 10px;
     }
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       font-size: 10px;
     }
+  }
+}
 
+.catalog__product {
+  .button {
+    margin-top: 25px;
   }
 }
 
@@ -49,7 +73,8 @@
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+  @media screen and (max-width: 700px),
+    (max-width: 850px) and (max-height: 500px) {
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
   }
@@ -66,11 +91,8 @@
     font-size: calc(18px + (20 - 18) * ((100vw - 360px) / (1920 - 360)));
     margin-bottom: 15px;
     font-weight: 600;
-
   }
 }
-
-
 
 /*old*/
 .catalog {
@@ -92,7 +114,7 @@
       font-size: 2.2rem;
       line-height: 2.8rem;
 
-      @media screen and #{$ipadg}{
+      @media screen and #{$ipadg} {
         font-size: 1.6rem;
         line-height: 2.2rem;
       }
@@ -101,7 +123,7 @@
     & > * + * {
       margin-top: 2rem;
 
-      @media screen and #{$ipadv}{
+      @media screen and #{$ipadv} {
         margin-top: 1rem;
       }
     }
@@ -111,7 +133,7 @@
       list-style: circle;
     }
 
-    @media screen and #{$ipadv}{
+    @media screen and #{$ipadv} {
       margin-bottom: 4rem;
     }
   }
@@ -119,7 +141,7 @@
   &__tag-tiles {
     margin-bottom: 6rem;
 
-    @media screen and #{$ipadv}{
+    @media screen and #{$ipadv} {
       margin-bottom: 4rem;
     }
   }
@@ -130,7 +152,7 @@
     display: flex;
     margin: calc(var(--gap) * -1) 0 0 calc(var(--gap) * -1);
 
-    @media screen and #{$ipadv}{
+    @media screen and #{$ipadv} {
       --gap: 1rem;
     }
   }
@@ -160,7 +182,7 @@
     font-size: 2.2rem;
     line-height: 2.8rem;
 
-    @media screen and #{$ipadv}{
+    @media screen and #{$ipadv} {
       min-width: 10rem;
       padding: 1rem 2.6rem;
       font-size: 1.6rem;

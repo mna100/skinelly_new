@@ -491,7 +491,6 @@
 
 
     .card-tab {
-      font-weight: 600;
       font-size: calc(12px + (20 - 12) * ((100vw - 360px) / (1920 - 360)));
       line-height: 1.2;
       color: $blackBold;
@@ -500,6 +499,7 @@
       outline: none;
       transition: all 0.1s ease;
       text-transform: uppercase;
+       font-weight: 400;
       @media screen and #{$i992}{
         padding: 0;
         width: 0;

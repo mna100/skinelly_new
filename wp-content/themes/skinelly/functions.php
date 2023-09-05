@@ -49,7 +49,7 @@
 	 * Register CSS
 	 */
 	function mna100_styles() {
-		wp_enqueue_style('bundle', get_template_directory_uri() . '/public/public.css');
+		wp_enqueue_style('bundle', get_template_directory_uri() . '/public/public.css',array(),7.10);
 	}
 
 	add_action('wp_enqueue_scripts', 'mna100_styles', 8);
