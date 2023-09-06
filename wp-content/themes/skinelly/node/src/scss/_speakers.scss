@@ -24,7 +24,6 @@
   .news-text {
     flex-grow: 1;
     flex-shrink: 1;
-
     flex-basis: auto;
 
     p {
@@ -36,4 +35,7 @@
       }
     }
   }
+}
+.news-text + a {
+  margin-top: 15px;
 }

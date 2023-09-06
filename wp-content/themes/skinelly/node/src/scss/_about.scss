@@ -51,3 +51,32 @@
   }
 
 }
+@media screen and (max-width:1360px) {
+  .about-tech {
+    padding-top:50px;
+  }
+}
+@media screen and (max-width:992px) {
+  .about .container {
+    background-position-y:280px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .about .container {
+    background-position-y:-40px;
+  }
+  .about-prop__card:last-child {
+    margin-bottom:60px;
+  }
+}
+@media screen and (max-width:500px) {
+  .about .container {
+    background-position-y:60px;
+  }
+}
+@media screen and (max-width:400px) {
+  .about .container {
+    background-position-y:90px;
+  }
+}

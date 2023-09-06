@@ -9,13 +9,12 @@
     max-width: 1110px;
     margin-right: auto;
     margin-left: auto;
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       padding-top: 45px;
       justify-content: center;
       flex-wrap: wrap;
-
     }
-
   }
 
   .slider {
@@ -24,7 +23,8 @@
     flex-basis: auto;
     min-width: 0;
     max-width: 690px;
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       flex-basis: 100%;
     }
   }
@@ -33,7 +33,8 @@
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: calc(320px + (420 - 320) * ((100vw - 360px) / (1920 - 360)));
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       margin-top: -70px;
       flex-basis: 100%;
       .description__inner {
@@ -42,10 +43,10 @@
       }
     }
 
-
     h1 {
       margin-bottom: 15px;
-      @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+      @media screen and (max-width: 700px),
+        (max-width: 850px) and (max-height: 500px) {
         position: absolute;
         top: 0;
         left: 0;
@@ -56,42 +57,44 @@
 
     .button {
       margin-top: 30px;
-      @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
-
+      @media screen and (max-width: 700px),
+        (max-width: 850px) and (max-height: 500px) {
         margin-top: 20px;
         margin-right: auto;
         margin-left: auto;
       }
-
-
     }
   }
 
   .slider__big {
     margin: 0 30px;
-    box-shadow: 0px 103px 41px rgba(153, 153, 153, 0.01), 0px 58px 35px rgba(153, 153, 153, 0.05), 0px 26px 26px rgba(153, 153, 153, 0.09);
+    box-shadow: 0px 103px 41px rgba(153, 153, 153, 0.01),
+      0px 58px 35px rgba(153, 153, 153, 0.05),
+      0px 26px 26px rgba(153, 153, 153, 0.09);
     border-radius: 6px;
-    @media screen and #{$i992}{
+    @media screen and #{$i992} {
       margin-right: 20px;
     }
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       margin: 0 20px;
     }
-
   }
 
   .slider__small {
     padding: 40px 30px 90px;
-    @media screen and #{$i992}{
+    @media screen and #{$i992} {
       padding: 15px 20px 90px 30px;
     }
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       padding: 15px 20px 90px;
     }
 
-
     .swiper-slide {
-      box-shadow: 0px 103px 41px rgba(153, 153, 153, 0.01), 0px 58px 35px rgba(153, 153, 153, 0.05), 0px 26px 26px rgba(153, 153, 153, 0.09);
+      box-shadow: 0px 103px 41px rgba(153, 153, 153, 0.01),
+        0px 58px 35px rgba(153, 153, 153, 0.05),
+        0px 26px 26px rgba(153, 153, 153, 0.09);
     }
 
     .swiper-slide-thumb-active {
@@ -101,7 +104,6 @@
     }
   }
 
-
   .swiper-slide {
     border-radius: 6px;
     overflow: hidden;
@@ -109,7 +111,7 @@
     padding-right: 1px;
 
     img {
-      border: 1px solid #E0E0E0;
+      border: 1px solid #e0e0e0;
       border-radius: 6px;
       overflow: hidden;
       width: 100%;
@@ -135,41 +137,43 @@
       }
     }
 
-    .swiper-button-next, .swiper-button-prev {
+    .swiper-button-next,
+    .swiper-button-prev {
       top: 90px;
       height: 35px;
       width: 17px;
       color: rgba(0, 0, 0, 0.4);
-      @media screen and #{$i992}{
+      @media screen and #{$i992} {
         display: none;
       }
     }
 
-    .swiper-button-next::after, .swiper-button-prev::after {
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
       font-size: 35px;
     }
   }
 
   .card-main {
-    @media screen and #{$i992}{
+    @media screen and #{$i992} {
       margin-top: -80px;
       position: relative;
       z-index: 2;
     }
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       margin-top: 0;
     }
-
   }
 
   .advantages {
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       .title-section {
         text-align: start;
         max-width: 200px;
       }
     }
-
   }
 
   .advantages__inner {
@@ -182,12 +186,12 @@
     gap: 40px 10px;
     font-size: calc(14px + (16 - 14) * ((100vw - 360px) / (1920 - 360)));
     line-height: 120%;
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       grid-template-rows: repeat(1, 1fr);
       grid-auto-flow: row;
       gap: 10px;
     }
-
 
     .advantages__card {
       display: flex;
@@ -212,14 +216,13 @@
       color: #fff;
       margin-right: 10px;
       background: var(--product-color);
-      @media screen and #{$ipadv}{
+      @media screen and #{$ipadv} {
         flex-basis: 30px;
         width: 30px;
         height: 30px;
         font-size: 18px;
       }
     }
-
   }
 }
 
@@ -229,7 +232,7 @@
   align-items: flex-start;
   font-size: calc(10px + (16 - 10) * ((100vw - 360px) / (1920 - 360)));
   line-height: 1.2;
-  @media screen and #{$i992}{
+  @media screen and #{$i992} {
     justify-content: center;
   }
 
@@ -239,10 +242,9 @@
     flex-basis: 51%;
     border-radius: 15px;
     overflow: hidden;
-    @media screen and #{$i992}{
+    @media screen and #{$i992} {
       display: none;
     }
-
   }
 
   .card-chars__table {
@@ -251,20 +253,18 @@
     flex-basis: 42%;
     border-top: 1px solid var(--product-color);
     border-bottom: 1px solid var(--product-color);
-    @media screen and #{$i992}{
+    @media screen and #{$i992} {
       flex-basis: 450px;
     }
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       flex-basis: 100%;
-
     }
-
   }
 
   &-row {
     display: flex;
     justify-content: space-between;
-
 
     &:first-child {
       .card-chars-name:before {
@@ -288,7 +288,8 @@
   &-td {
     position: relative;
     padding: 10px 10px 10px 0;
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       padding: 5px 10px 5px 0;
     }
 
@@ -306,7 +307,6 @@
   &-name {
     flex: 0 0 46%;
     max-width: 46%;
-
 
     &:before {
       content: "";
@@ -332,30 +332,31 @@
   flex-wrap: wrap;
   font-size: calc(14px + (16 - 14) * ((100vw - 360px) / (1920 - 360)));
   line-height: 120%;
-  @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+  @media screen and (max-width: 700px),
+    (max-width: 850px) and (max-height: 500px) {
     justify-content: center;
   }
-
 
   .card-injection__l,
   .card-injection__r {
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: 41%;
-    @media screen and #{$i992}{
+    @media screen and #{$i992} {
       flex-basis: 47%;
     }
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       flex-basis: 100%;
       max-width: 400px;
     }
   }
 
   .card-injection__l {
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       margin-bottom: 15px;
     }
-
   }
 
   .card-injection__subtitle {
@@ -391,13 +392,12 @@
           max-width: unset;
         }
       }
-
     }
 
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       gap: 15px;
     }
-
   }
 
   .card-injection__item {
@@ -431,7 +431,6 @@
   }
 }
 
-
 /*old*/
 .card {
   &-tabs {
@@ -441,7 +440,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @media screen and #{$i992}{
+    @media screen and #{$i992} {
       padding: 0;
       width: 0;
       height: 0;
@@ -463,13 +462,12 @@
       }
     }
 
-
     &__inner {
       display: none;
       max-width: 1070px;
       margin-right: auto;
       margin-left: auto;
-      @media screen and #{$i992}{
+      @media screen and #{$i992} {
         /*       display: block;
                overflow: hidden;
                max-height: 0;
@@ -477,7 +475,8 @@
         margin-top: 30px;
         margin-bottom: 30px;
       }
-      @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+      @media screen and (max-width: 700px),
+        (max-width: 850px) and (max-height: 500px) {
         margin-top: 15px;
         margin-bottom: 15px;
       }
@@ -486,9 +485,7 @@
         display: block;
         animation: fadeIn ease 1s;
       }
-
     }
-
 
     .card-tab {
       font-size: calc(12px + (20 - 12) * ((100vw - 360px) / (1920 - 360)));
@@ -499,25 +496,22 @@
       outline: none;
       transition: all 0.1s ease;
       text-transform: uppercase;
-       font-weight: 400;
-      @media screen and #{$i992}{
+      font-weight: 400;
+      @media screen and #{$i992} {
         padding: 0;
         width: 0;
         height: 0;
         opacity: 0;
         overflow: hidden;
-
       }
 
       &:last-child {
         margin-right: 0;
       }
 
-
       &.card-tab-active {
         font-weight: 600;
         color: var(--product-color);
-
       }
     }
   }
@@ -525,7 +519,7 @@
   .card-tab-mobile {
     display: none;
     transition: all 0.2s;
-    @media screen and #{$i992}{
+    @media screen and #{$i992} {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -541,7 +535,7 @@
         width: 14px;
         height: 7px;
         line-height: 0;
-        transition: all .2s;
+        transition: all 0.2s;
       }
       &.card-tab-mobile_active {
         font-weight: 600;
@@ -550,7 +544,7 @@
 
         .card-tab-mobile__arrow {
           transform: rotate(180deg);
-          transition: all .2s;
+          transition: all 0.2s;
         }
 
         svg path {
@@ -571,17 +565,16 @@
       flex-basis: 50%;
       border-radius: 15px;
       overflow: hidden;
-      @media screen and #{$ipadv}{
+      @media screen and #{$ipadv} {
         display: none;
       }
-
     }
 
     &__info {
       flex: 0 0 42%;
       font-size: 1.6rem;
       line-height: 1.25;
-      @media screen and #{$ipadv}{
+      @media screen and #{$ipadv} {
         flex: 0 0 100%;
         display: flex;
         justify-content: center;
@@ -590,7 +583,6 @@
         }
       }
     }
-
   }
 
   &-video {
@@ -637,13 +629,13 @@
       transition: all 0.5s ease;
 
       svg {
-        @media screen and #{$ipadv}{
+        @media screen and #{$ipadv} {
           width: 10rem;
         }
-        @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+        @media screen and (max-width: 700px),
+          (max-width: 850px) and (max-height: 500px) {
           width: 6rem;
         }
-
       }
 
       &.fade-out {
@@ -665,11 +657,189 @@
     }
   }
 
+  .tab-video {
+    max-width: 100%;
+  }
   .card-video_result {
-    img {
-      border-radius: 6px;
-      overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    max-width: calc(100% + 30px);
+    overflow: visible;
+  }
+  .card-video_result > div,
+  .card-video_result > a {
+    margin: 0 15px 30px;
+    width: 100%;
+    max-width: calc(33.33% - 30px);
+  }
+  .card-video_result > a img {
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    display: block;
+    height: 440px;
+    object-fit: cover;
+    box-shadow: 0px 26px 26px 0px rgba(153, 153, 153, 0.09),
+      0px 58px 35px 0px rgba(153, 153, 153, 0.05),
+      0px 103px 41px 0px rgba(153, 153, 153, 0.01),
+      0px 160px 45px 0px rgba(153, 153, 153, 0);
+  }
+  #modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    display: none;
+  }
+  #modal .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 1;
+  }
+  #modal .content {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: auto;
+  }
+  #modal .content .c {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    max-height: 100%;
+    overflow: auto;
+    max-width: 700px;
+    padding: 100px 75px 30px;
+  }
+  .g img {
+    display: block;
+    margin: 0 0 30px;
+    border-radius: 6px;
+  }
+  .g .info p {
+    margin: 0 0 10px;
+    display: flex;
+    font-size: 18px;
+  }
+  .g .info p span {
+    display: block;
+    width: 180px;
+    min-width: 180px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .card-video_result .g {
+    display: none;
+  }
+  #modal ::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 3px;
+  }
+
+  #modal ::-webkit-scrollbar-track {
+    background: #e3eaff;
+  }
+
+  #modal ::-webkit-scrollbar-thumb {
+    background-color: #7791df;
+  }
+  #modal .close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  html.open {
+    overflow: hidden;
+  }
+  .slick-arrow {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: calc(50% - 20px);
+    z-index: 2;
+    cursor: pointer;
+  }
+  .slick-next {
+    background: url("./img/next.svg") no-repeat center center;
+    border: 0;
+    text-indent: -9999px;
+    box-shadow: none;
+    right: -60px;
+  }
+  .slick-prev {
+    background: url("./img/prev.svg") no-repeat center center;
+    border: 0;
+    text-indent: -9999px;
+    box-shadow: none;
+    left: -60px;
+  }
+  .catalog__category .button {
+    margin-top: 0;
+  }
+
+  .catalog__category {
+    border: 0;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+  }
+  @media screen and (max-width: 1360px) {
+    .card-video_result > a img {
+      height: 375px;
     }
   }
 
+  @media screen and (max-width: 1180px) {
+    .card-video_result > a img {
+      height: 32vw;
+    }
+  }
+
+  @media screen and (max-width: 911px) {
+    .card-video_result > a {
+      display: none;
+    }
+    .card-video_result > .g {
+      display: block;
+      margin: 0 0 30px;
+    }
+    .card-video_result > div,
+    .card-video_result > a {
+      max-width: 100%;
+      margin: 0 0 30px;
+    }
+    .card-video_result {
+      margin: 0;
+      max-width: 100%;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .g img {
+      margin: 0 0 15px;
+    }
+    .g .info p {
+      font-size: 14px;
+    }
+    .card-video_result > .g {
+      margin: 0 0 15px;
+    }
+    .g .info p span {
+      min-width: 120px;
+      width: 120px;
+      font-size: 14px;
+    }
+  }
 }
