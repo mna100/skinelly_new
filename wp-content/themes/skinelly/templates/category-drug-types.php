@@ -95,7 +95,7 @@
 			<div class="container">
 				<div class="catalog__categories-wrapper">
 					<? foreach ($top_term_children as $child) : ?>
-						<a href="<?= get_term_link($child->term_id); ?>" class="catalog__category">
+						<a href="<?= get_term_link($child->term_id); ?>" class="catalog__category <?= get_field("drug_type_image", "drug-types_" . $child->term_id) ? "catalog__category_has-image" : "" ?>">
 							<? if (get_field("drug_type_image", "drug-types_" . $child->term_id)) : ?>
 								<img class="lozad" data-src="<?= get_field("drug_type_image", "drug-types_" . $child->term_id)["url"]; ?>" alt="<?= get_field("drug_type_image", "drug-types_" . $child->term_id)["alt"]; ?>">
 							<? endif; ?>
