@@ -1,12 +1,9 @@
-
 @import "swiper/css/bundle";
 //@import "swiper/css/bundle";
 @import "../node_modules/toastify-js/src/toastify.css";
 @import "../node_modules/@fancyapps/ui/dist/fancybox.css";
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
-
-
 
 @import "scss/general.scss";
 @import "scss/header.scss";
@@ -19,4 +16,6 @@
 @import "scss/news.scss";
 @import "scss/news-single.scss";
 @import "scss/catalog-list.scss";
+@import "scss/speakers-single.scss";
+@import "scss/speakers.scss";
 @import "scss/catalog-element.scss";

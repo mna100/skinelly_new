@@ -1,21 +1,22 @@
 @import "const.scss";
 
 .events-post {
-
   .events__top {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 
     .button {
-      @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+      @media screen and (max-width: 700px),
+        (max-width: 850px) and (max-height: 500px) {
         display: none;
       }
     }
 
     .button-events-mobile {
       display: none;
-      @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+      @media screen and (max-width: 700px),
+        (max-width: 850px) and (max-height: 500px) {
         display: inline-flex;
       }
     }
@@ -24,12 +25,23 @@
       flex-grow: 0;
       flex-shrink: 1;
       flex-basis: 56%;
-      @media screen and #{$i992}{
+      @media screen and #{$i992} {
         flex-basis: 48%;
       }
-      @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+      @media screen and (max-width: 700px),
+        (max-width: 850px) and (max-height: 500px) {
         flex-basis: 100%;
       }
+    }
+  }
+
+  .events__content-wrapper {
+    display: grid;
+    grid-template-columns: minmax(29.5rem, auto) auto;
+    align-items: start;
+
+    @media screen and (max-width: 850px) {
+      grid-template-columns: auto;
     }
   }
 
@@ -37,10 +49,11 @@
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: 35%;
-    @media screen and #{$i992}{
+    @media screen and #{$i992} {
       flex-basis: 42%;
     }
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       flex-basis: 100%;
       display: flex;
       flex-direction: column;
@@ -52,7 +65,7 @@
     text-transform: uppercase;
     font-size: calc(16px + (25 - 16) * ((100vw - 360px) / (1920 - 360)));
     margin-bottom: calc(15px + (20 - 15) * ((100vw - 360px) / (1920 - 360)));
-    @media screen and #{$i992}{
+    @media screen and #{$i992} {
       font-size: 14px;
     }
   }
@@ -67,14 +80,15 @@
     font-size: calc(14px + (16 - 14) * ((100vw - 360px) / (1920 - 360)));
     font-weight: 600;
     margin-bottom: 15px;
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       width: 100%;
     }
 
     img {
       max-width: 40px;
       margin-right: 40px;
-      @media screen and #{$i992}{
+      @media screen and #{$i992} {
         margin-right: 10px;
       }
     }
@@ -83,7 +97,9 @@
   .events__bottom {
     display: flex;
     flex-wrap: wrap;
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       flex-direction: column;
     }
   }
@@ -94,19 +110,21 @@
     font-size: 0;
     max-width: 410px;
     border-radius: 6px;
-    background: #FFF;
-    box-shadow: 0 26px 26px 0px rgba(153, 153, 153, 0.09), 0px 58px 35px 0px rgba(153, 153, 153, 0.05), 0px 103px 41px 0px rgba(153, 153, 153, 0.01), 0px 160px 45px 0px rgba(153, 153, 153, 0.00);
-    @media screen and #{$i992}{
+    background: #fff;
+    box-shadow: 0 26px 26px 0px rgba(153, 153, 153, 0.09),
+      0px 58px 35px 0px rgba(153, 153, 153, 0.05),
+      0px 103px 41px 0px rgba(153, 153, 153, 0.01),
+      0px 160px 45px 0px rgba(153, 153, 153, 0);
+    @media screen and #{$i992} {
       margin-right: 20px;
       max-width: 295px;
     }
-    @media screen and (max-width: 700px), (max-width: 850px) and (max-height: 500px) {
+    @media screen and (max-width: 700px),
+      (max-width: 850px) and (max-height: 500px) {
       order: 2;
       margin-top: 15px;
       margin-right: auto;
       margin-left: auto;
     }
-
-
   }
 }
