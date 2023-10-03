@@ -200,8 +200,8 @@
         js2.parentNode.insertBefore(js, js2);
     })(window, document, 'script', 'cloud.roistat.com', '115d0594106852dbe69c02ff2c0c13e0');
 </script>
-<div style="display: none;" class="test"></div>
 <!-- Roistat Counter End -->
+<div style="display: none;" class="test">тест</div>
 </body>
 
 </html>
