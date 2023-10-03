@@ -238,9 +238,10 @@ if (document.querySelector("form.fetch")) {
                         //data.append(cookie[0], cookie[1])
                         send[cookie[0]]=cookie[1];
                     }
-                    for (const [key, value] of data.entries()) {
+                   /* for (const [key, value] of data.entries()) {
                         console.log(key, ': ', value)
-                    }
+                    }*/
+                    console.log(send)
                     leadgets('lead', send, (r) => {
                         console.log(r)
                         if (r.status === 1) {
