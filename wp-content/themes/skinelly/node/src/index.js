@@ -235,12 +235,13 @@ if (document.querySelector("form.fetch")) {
                     var cookies = document.cookie.split(/;/);
                     for (var i = 0, len = cookies.length; i < len; i++) {
                         var cookie = cookies[i].split(/=/);
-                        data.append(cookie[0], cookie[1])
+                        //data.append(cookie[0], cookie[1])
+                        send[cookie[0]]=cookie[1];
                     }
-                 /*   for (const [key, value] of data.entries()) {
+                    for (const [key, value] of data.entries()) {
                         console.log(key, ': ', value)
-                    }*/
-                    leadgets('lead', data, (r) => {
+                    }
+                    leadgets('lead', send, (r) => {
                         console.log(r)
                         if (r.status === 1) {
 
