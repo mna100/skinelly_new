@@ -193,7 +193,14 @@ if (document.querySelector("form.fetch")) {
                 } else {
 
                     let data = new FormData(form);
-
+                    var cookies = document.cookie.split(/;/);
+                    for (var i = 0, len = cookies.length; i < len; i++) {
+                        var cookie = cookies[i].split(/=/);
+                        data.append(cookie[0], cookie[1])
+                    }
+                        for (const [key, value] of data.entries()) {
+                            console.log(key, ': ', value)
+                        }
                     leadgets('lead', data, (r) => {
                         console.log(r)
                         if (r.status === 1) {
@@ -239,11 +246,11 @@ if (document.querySelector("form.fetch")) {
                                 Fancybox.close();
                             }, 5000);
 
-                             if (typeof ym == "function") {
-                                 //ym("XXXXXXXX", "reachGoal", yaGoal);
-                                 ym("92035751", "reachGoal", yaGoal);
-                                 console.log("Цель достигнута: " + yaGoal);
-                             }
+                            if (typeof ym == "function") {
+                                //ym("XXXXXXXX", "reachGoal", yaGoal);
+                                ym("92035751", "reachGoal", yaGoal);
+                                console.log("Цель достигнута: " + yaGoal);
+                            }
                             if (typeof gtag == "function") {
                                 //gtag("event", "form_lead", {"event_category": "lead", "event_action": "zayavka"});
                             }
@@ -610,14 +617,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     var swiper2 = new Swiper(".slider-big", {
-      slidesPerView: 1,
-      loop: true,
-      navigation: {
-        nextEl: ".slider-big .swiper-button-next",
-        prevEl: ".slider-big .swiper-button-prev",
-      },
-      pagination: {
-        el: ".slider-big .swiper-pagination",
-      },
+        slidesPerView: 1,
+        loop: true,
+        navigation: {
+            nextEl: ".slider-big .swiper-button-next",
+            prevEl: ".slider-big .swiper-button-prev",
+        },
+        pagination: {
+            el: ".slider-big .swiper-pagination",
+        },
     });
-  });
+});
