@@ -202,6 +202,7 @@
 </script>
 <!-- Roistat Counter End -->
 <div style="display: none;" class="test">тест</div>
+<div style="display: none;" class="test">тест</div>
 </body>
 
 </html>
