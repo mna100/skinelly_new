@@ -201,8 +201,6 @@
     })(window, document, 'script', 'cloud.roistat.com', '115d0594106852dbe69c02ff2c0c13e0');
 </script>
 <!-- Roistat Counter End -->
-<div style="display: none;" class="test">тест</div>
-<div style="display: none;" class="test">тест</div>
 </body>
 
 </html>
