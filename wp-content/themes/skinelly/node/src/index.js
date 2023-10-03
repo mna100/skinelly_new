@@ -176,6 +176,21 @@ if (document.querySelector(".file-delete")) {
     });
 }
 
+function sendJSON(data) {
+    let xhr = new XMLHttpRequest();
+    let url = "/wp-content/themes/skinelly/ajax/bitrix_send.php";
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.addEventListener("readystatechange", () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.responseText);
+        }
+    });
+    var json = JSON.stringify(data);
+
+    xhr.send(json);
+}
+
 /**
  * Form
  */
@@ -187,20 +202,45 @@ if (document.querySelector("form.fetch")) {
                 let yaGoal = form.querySelector("input[name='ya_goal']").value;
 
                 let phone = form.querySelector("input[name='phone']").value;
+                let name = form.querySelector("input[name='name']").value;
 
                 if (phone.length[17] === "_" || phone.length === 0) {
                     document.querySelector("input[name='phone']").classList.add("is-error");
+                } else if (name.length === 0) {
+                    document.querySelector("input[name='name']").classList.add("is-error");
                 } else {
+                    if (form.querySelector("input[type='submit']"))
+                        form
+                            .querySelector("input[type='submit']")
+                            .setAttribute("disabled", "");
+                    if (form.querySelector("button[type='submit']"))
+                        form
+                            .querySelector("button[type='submit']")
+                            .setAttribute("disabled", "");
 
                     let data = new FormData(form);
+
+                    let send = {};
+                    for (const [key, value] of data.entries()) {
+                        if (key == 'question') {
+                            send['comment'] = value;
+                        }
+                        if (key == 'name' || key == 'phone' || key == 'form_id') {
+                            send[key] = value;
+                        }
+                    }
+                    send.ref = window.location.pathname;
+
+
                     var cookies = document.cookie.split(/;/);
                     for (var i = 0, len = cookies.length; i < len; i++) {
                         var cookie = cookies[i].split(/=/);
                         data.append(cookie[0], cookie[1])
                     }
-                        for (const [key, value] of data.entries()) {
-                            console.log(key, ': ', value)
-                        }
+                    for (const [key, value] of data.entries()) {
+                        console.log(key, ': ', value)
+                    }
+                    return;
                     leadgets('lead', data, (r) => {
                         console.log(r)
                         if (r.status === 1) {
@@ -238,6 +278,8 @@ if (document.querySelector("form.fetch")) {
                                     if (el.name != "agreement") el.checked = false;
                                 });
                             }
+                            //отправка данных в битрикс 24
+                            sendJSON(send);
 
                             setTimeout(() => {
                                 fancyboxShow("#thanks", "inline");
