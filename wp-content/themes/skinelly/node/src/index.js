@@ -186,6 +186,7 @@ function sendJSON(data) {
             console.log(xhr.responseText);
         }
     });
+    console.log(data)
     var json = JSON.stringify(data);
 
     xhr.send(json);
@@ -221,6 +222,7 @@ if (document.querySelector("form.fetch")) {
                     let data = new FormData(form);
 
                     let send = {};
+                    let cookiesObj = {};
                     for (const [key, value] of data.entries()) {
                         if (key == 'question') {
                             send['comment'] = value;
@@ -229,19 +231,22 @@ if (document.querySelector("form.fetch")) {
                             send[key] = value;
                         }
                     }
-                    send.ref = window.location.pathname;
+                    send.ref = window.location.href;
 
 
                     var cookies = document.cookie.split(/;/);
                     for (var i = 0, len = cookies.length; i < len; i++) {
                         var cookie = cookies[i].split(/=/);
                         //data.append(cookie[0], cookie[1])
-                        send[cookie[0]]=cookie[1];
+                        cookiesObj[cookie[0].trim()]=cookie[1].trim();
                     }
-                   /* for (const [key, value] of data.entries()) {
+
+                    send['cookies'] = cookiesObj;
+
+                    for (const [key, value] of send.entries()) {
                         console.log(key, ': ', value)
-                    }*/
-                    console.log(send)
+                    }
+
                     leadgets('lead', send, (r) => {
                         console.log(r)
                         if (r.status === 1) {
