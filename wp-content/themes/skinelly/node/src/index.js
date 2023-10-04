@@ -247,8 +247,6 @@ if (document.querySelector("form.fetch")) {
                            console.log(key, ': ', value)
                        }*/
 
-                    sendJSON(send);
-                    return;
                     leadgets('lead', send, (r) => {
                         console.log(r)
                         if (r.status === 1) {
