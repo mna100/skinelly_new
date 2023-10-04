@@ -238,13 +238,16 @@ if (document.querySelector("form.fetch")) {
                     for (var i = 0, len = cookies.length; i < len; i++) {
                         var cookie = cookies[i].split(/=/);
                         //data.append(cookie[0], cookie[1])
-                        cookiesObj[cookie[0].trim()]=cookie[1].trim();
+                        cookiesObj[cookie[0].trim()] = cookie[1].trim();
                     }
 
                     send['cookies'] = cookiesObj;
 
-                    for (const [key, value] of send.entries()) {
-                        console.log(key, ': ', value)
+                    /*   for (const [key, value] of data.entries()) {
+                           console.log(key, ': ', value)
+                       }*/
+                    for (var key in send) {
+                        console.log(key + ': ' + data[key]);
                     }
 
                     leadgets('lead', send, (r) => {
