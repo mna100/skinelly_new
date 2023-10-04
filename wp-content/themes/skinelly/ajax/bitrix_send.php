@@ -1,5 +1,8 @@
 <?php
+	debug($_REQUEST);
 	$data = file_get_contents('php://input');
+	debug($data);
+	die();
 	$data = json_decode($data, true);
 	$ch = curl_init('https://directalab.ru/b24/forms/ajax.php');
 	curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type:application/json']);

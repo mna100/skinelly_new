@@ -1,5 +1,5 @@
 /*!
- * Toastify js 1.12.0
+ * Toastify js 1.11.2
  * https://github.com/apvarun/toastify-js
  * @license MIT licensed
  *
@@ -9,9 +9,9 @@
 /*!
  * dist/inputmask.min
  * https://github.com/RobinHerbots/Inputmask
- * Copyright (c) 2010 - 2023 Robin Herbots
+ * Copyright (c) 2010 - 2021 Robin Herbots
  * Licensed under the MIT license
- * Version: 5.0.8
+ * Version: 5.0.7
  */
 
 /*! lozad.js - v1.16.0 - 2020-09-06
