@@ -1,11 +1,10 @@
 <?php
 	// на какие данные рассчитан этот скрипт
 	header("Content-Type: application/json");
-	var_dump($_REQUEST);
 	$data = file_get_contents('php://input');
-	var_dump($data);
-	die();
 	$data = json_decode($data, true);
+	debug($data);
+	die();
 	$ch   = curl_init('https://directalab.ru/b24/forms/ajax.php');
 	curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type:application/json']);
 	curl_setopt($ch, CURLOPT_POST, 1);
