@@ -3,7 +3,7 @@
 	header("Content-Type: application/json");
 	$data = file_get_contents('php://input');
 	$data = json_decode($data, true);
-	debug($data);
+	var_dump($data);
 	die();
 	$ch   = curl_init('https://directalab.ru/b24/forms/ajax.php');
 	curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type:application/json']);
