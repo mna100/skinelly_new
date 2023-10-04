@@ -186,8 +186,7 @@ function sendJSON(data) {
             console.log(xhr.responseText);
         }
     });
-    console.log(111111111)
-    console.log(data)
+
     var json = JSON.stringify(data);
 
     xhr.send(json);
@@ -247,9 +246,7 @@ if (document.querySelector("form.fetch")) {
                     /*   for (const [key, value] of data.entries()) {
                            console.log(key, ': ', value)
                        }*/
-                    for (var key in send) {
-                        console.log(key + ': ' + send[key]);
-                    }
+
                     sendJSON(send);
                     return;
                     leadgets('lead', send, (r) => {
