@@ -607,4 +607,6 @@
 	//картинка для страницы мероприятий
 	add_image_size('skinelly-events', 412, 392, true);
 
-
+@ini_set( 'upload_max_size' , '6400M' );
+@ini_set( 'post_max_size', '6400M');
+@ini_set( 'max_execution_time', '3000' );

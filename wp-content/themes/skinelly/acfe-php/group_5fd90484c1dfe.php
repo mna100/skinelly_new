@@ -186,7 +186,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'obshhie' => 'Общие',
 	),
-	'modified' => 1681395963,
+	'modified' => 1698178045,
 ));
 
 endif;

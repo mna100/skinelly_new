@@ -65,6 +65,71 @@
             "acfe_wysiwyg_merge_toolbar": 0,
             "acfe_wysiwyg_custom_toolbar": 0,
             "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_65380fa073632",
+            "label": "Видео-визитка",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0,
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_65380fb673633",
+            "label": "Встроенное видео ( ID )",
+            "name": "speakers_video_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_65380fd273634",
+            "label": "Превью",
+            "name": "speakers_video_img",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "acfe_thumbnail": 0,
+            "return_format": "url",
+            "preview_size": "medium",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "acfe_field_group_condition": 0,
+            "library": "all"
         }
     ],
     "location": [
@@ -93,5 +158,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1689171318
+    "modified": 1698178046
 }

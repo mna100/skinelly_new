@@ -74,3 +74,69 @@
     }
   }
 }
+
+.speakers-video {
+  margin-top: 5rem;
+  img,
+  iframe {
+    height: 737px;
+    cursor: pointer;
+    border-radius: 2rem;
+  }
+  img {
+    object-fit: contain;
+    width: 100%;
+    position: relative;
+
+
+  }
+  iframe {
+    z-index: 1;
+    position: relative;
+  }
+  &-inner {
+    position: relative;
+    &::after {
+      content: url("./img/play.svg");
+      cursor: pointer;
+      left: 50%;
+      margin-left: -5rem;
+      margin-top: -5rem;
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+    }
+
+    &:hover {
+      &::after {
+        content: url("./img/play-hover.svg");
+      }
+    }
+  }
+
+
+  @media (max-width: 1360px) {
+    img,
+    iframe {
+      height: 617px;
+    }
+  }
+  @media (max-width: 900px) {
+    img,
+    iframe {
+      height: 480px;
+    }
+  }
+  @media (max-width: 600px) {
+    img,
+    iframe {
+      height: 325px;
+    }
+  }
+  @media (max-width: 480px) {
+    img,
+    iframe {
+      height: 257px;
+    }
+  }
+}

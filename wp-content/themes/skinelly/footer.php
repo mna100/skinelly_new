@@ -29,7 +29,7 @@
                 </div>
                 <div class="footer__contacts">
 					<? if (get_field("phone", 'options')) { ?>
-                        <a href="tel:<? echo get_phone_link(get_field("phone", 'options')); ?>">
+                        <a href="<? echo get_phone_link(get_field("phone", 'options')); ?>">
 							<? the_field("phone", 'options'); ?>
                         </a>
 					<? } ?>

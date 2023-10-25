@@ -1,11 +1,11 @@
 {
-    "key": "group_63e161bd7809a",
-    "title": "Политика обработки персональных данных",
+    "key": "group_6418a0579ff49",
+    "title": "Дополнительное текстовое поле в каталоге",
     "fields": [
         {
-            "key": "field_63e161e2ad1fe",
+            "key": "field_6418a073b2ebb",
             "label": "Текст",
-            "name": "policy_text",
+            "name": "catalog__additional__text",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -40,7 +40,14 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "templates\/policy.php"
+                "value": "templates\/catalog.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/catalog-products.php"
             }
         ]
     ],
@@ -59,7 +66,12 @@
     ],
     "acfe_form": 0,
     "acfe_display_title": "",
-    "acfe_meta": "",
+    "acfe_meta": {
+        "acfcloneindex": {
+            "acfe_meta_key": "",
+            "acfe_meta_value": ""
+        }
+    },
     "acfe_note": "",
-    "modified": 1698178046
+    "modified": 1698178045
 }
