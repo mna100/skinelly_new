@@ -79,6 +79,9 @@ if (is_tax("drug-types")) {
                         </a>
                     </div>
                     <div class="header__info">
+                        <a href="https://dekalaser.ru/" class="header__info__link" target="_blank">
+                            <img src="http://skinelly.ru/wp-content/uploads/2023/11/logo-deka.svg" alt="" style="height: 21px;">
+                        </a>
                         <a href="https://directalab.ru/" class="header__info__link" target="_blank">
                             <img src="http://skinelly.ru/wp-content/uploads/2023/10/dl-png-1.png" alt="">
                         </a>
@@ -137,6 +140,9 @@ if (is_tax("drug-types")) {
             <?php wp_nav_menu(['theme_location' => 'menu-header']); ?>
             <a href="https://directalab.ru/" class="header__info__link__mob" target="_blank">
                 <img src="http://skinelly.ru/wp-content/uploads/2023/10/dl-png-1-2.png" alt="">
+            </a>
+            <a href="https://dekalaser.ru/" class="header__info__link__mob" target="_blank">
+                <img src="http://skinelly.ru/wp-content/uploads/2023/11/logo-deka-1.svg" alt="" style="height: 13px;">
             </a>
         </div>
 
