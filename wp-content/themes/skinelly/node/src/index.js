@@ -197,120 +197,120 @@ function sendJSON(data) {
 /**
  * Form
  */
-if (document.querySelector("form.fetch")) {
-  document.querySelectorAll("form.fetch").forEach((form) => {
-    form.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-      let yaGoal = form.querySelector("input[name='ya_goal']").value;
+// if (document.querySelector("form.fetch")) {
+//   document.querySelectorAll("form.fetch").forEach((form) => {
+//     form.addEventListener("submit", (evt) => {
+//       evt.preventDefault();
+//       let yaGoal = form.querySelector("input[name='ya_goal']").value;
 
-      let phone = form.querySelector("input[name='phone']").value;
-      let name = form.querySelector("input[name='name']").value;
+//       let phone = form.querySelector("input[name='phone']").value;
+//       let name = form.querySelector("input[name='name']").value;
 
-      if (phone.length[17] === "_" || phone.length === 0) {
-        document.querySelector("input[name='phone']").classList.add("is-error");
-      } else if (name.length === 0) {
-        document.querySelector("input[name='name']").classList.add("is-error");
-      } else {
-        if (form.querySelector("input[type='submit']"))
-          form
-            .querySelector("input[type='submit']")
-            .setAttribute("disabled", "");
-        if (form.querySelector("button[type='submit']"))
-          form
-            .querySelector("button[type='submit']")
-            .setAttribute("disabled", "");
+//       if (phone.length[17] === "_" || phone.length === 0) {
+//         document.querySelector("input[name='phone']").classList.add("is-error");
+//       } else if (name.length === 0) {
+//         document.querySelector("input[name='name']").classList.add("is-error");
+//       } else {
+//         if (form.querySelector("input[type='submit']"))
+//           form
+//             .querySelector("input[type='submit']")
+//             .setAttribute("disabled", "");
+//         if (form.querySelector("button[type='submit']"))
+//           form
+//             .querySelector("button[type='submit']")
+//             .setAttribute("disabled", "");
 
-        let data = new FormData(form);
+//         let data = new FormData(form);
 
-        let send = {};
-        let cookiesObj = {};
-        for (const [key, value] of data.entries()) {
-          if (key == "question") {
-            send["comment"] = value;
-          }
-          if (key == "name" || key == "phone" || key == "form_id") {
-            send[key] = value;
-          }
-        }
-        send.ref = window.location.href;
+//         let send = {};
+//         let cookiesObj = {};
+//         for (const [key, value] of data.entries()) {
+//           if (key == "question") {
+//             send["comment"] = value;
+//           }
+//           if (key == "name" || key == "phone" || key == "form_id") {
+//             send[key] = value;
+//           }
+//         }
+//         send.ref = window.location.href;
 
-        var cookies = document.cookie.split(/;/);
-        for (var i = 0, len = cookies.length; i < len; i++) {
-          var cookie = cookies[i].split(/=/);
-          //data.append(cookie[0], cookie[1])
-          cookiesObj[cookie[0].trim()] = cookie[1].trim();
-        }
+//         var cookies = document.cookie.split(/;/);
+//         for (var i = 0, len = cookies.length; i < len; i++) {
+//           var cookie = cookies[i].split(/=/);
+//           //data.append(cookie[0], cookie[1])
+//           cookiesObj[cookie[0].trim()] = cookie[1].trim();
+//         }
 
-        send["cookies"] = cookiesObj;
+//         send["cookies"] = cookiesObj;
 
-        /*   for (const [key, value] of data.entries()) {
-                           console.log(key, ': ', value)
-                       }*/
+//         /*   for (const [key, value] of data.entries()) {
+//                            console.log(key, ': ', value)
+//                        }*/
 
-        leadgets("lead", send, (r) => {
-          console.log(r);
-          if (r.status === 1) {
-            if (form.querySelector("#file_presentation")) {
-              let link = form.querySelector("#file_presentation").value;
-              var link_form = document.createElement("a");
+//         leadgets("lead", send, (r) => {
+//           console.log(r);
+//           if (r.status === 1) {
+//             if (form.querySelector("#file_presentation")) {
+//               let link = form.querySelector("#file_presentation").value;
+//               var link_form = document.createElement("a");
 
-              link_form.setAttribute("href", link);
-              link_form.setAttribute("download", "Презентация");
-              onload = link_form.click();
-            }
+//               link_form.setAttribute("href", link);
+//               link_form.setAttribute("download", "Презентация");
+//               onload = link_form.click();
+//             }
 
-            Fancybox.close();
+//             Fancybox.close();
 
-            form.querySelectorAll("input").forEach((inp) => {
-              if (
-                inp.type !== "submit" &&
-                inp.type !== "checkbox" &&
-                inp.type !== "radio" &&
-                inp.type !== "hidden"
-              ) {
-                inp.value = "";
-                inp.parentNode.classList.remove("valid");
-              }
-            });
-            if (form.querySelector("textarea")) {
-              form.querySelector("textarea").value = "";
-              form
-                .querySelector("textarea")
-                .parentNode.classList.remove("valid");
-            }
-            if (form.querySelector("input[type='checkbox']")) {
-              form.querySelectorAll("input[type='checkbox']").forEach((el) => {
-                if (el.name != "agreement") el.checked = false;
-              });
-            }
-            //отправка данных в битрикс 24
-            sendJSON(send);
+//             form.querySelectorAll("input").forEach((inp) => {
+//               if (
+//                 inp.type !== "submit" &&
+//                 inp.type !== "checkbox" &&
+//                 inp.type !== "radio" &&
+//                 inp.type !== "hidden"
+//               ) {
+//                 inp.value = "";
+//                 inp.parentNode.classList.remove("valid");
+//               }
+//             });
+//             if (form.querySelector("textarea")) {
+//               form.querySelector("textarea").value = "";
+//               form
+//                 .querySelector("textarea")
+//                 .parentNode.classList.remove("valid");
+//             }
+//             if (form.querySelector("input[type='checkbox']")) {
+//               form.querySelectorAll("input[type='checkbox']").forEach((el) => {
+//                 if (el.name != "agreement") el.checked = false;
+//               });
+//             }
+//             //отправка данных в битрикс 24
+//             sendJSON(send);
 
-            setTimeout(() => {
-              fancyboxShow("#thanks", "inline");
-            }, 150);
-            setTimeout(() => {
-              Fancybox.close();
-            }, 5000);
+//             setTimeout(() => {
+//               fancyboxShow("#thanks", "inline");
+//             }, 150);
+//             setTimeout(() => {
+//               Fancybox.close();
+//             }, 5000);
 
-            if (typeof ym == "function") {
-              //ym("XXXXXXXX", "reachGoal", yaGoal);
-              ym("92035751", "reachGoal", yaGoal);
-              console.log("Цель достигнута: " + yaGoal);
-            }
-            if (typeof gtag == "function") {
-              //gtag("event", "form_lead", {"event_category": "lead", "event_action": "zayavka"});
-            }
-          } else {
-            toast("Внимание!", "Ошибка ! " + r.message, "WARNING");
+//             if (typeof ym == "function") {
+//               //ym("XXXXXXXX", "reachGoal", yaGoal);
+//               ym("92035751", "reachGoal", yaGoal);
+//               console.log("Цель достигнута: " + yaGoal);
+//             }
+//             if (typeof gtag == "function") {
+//               //gtag("event", "form_lead", {"event_category": "lead", "event_action": "zayavka"});
+//             }
+//           } else {
+//             toast("Внимание!", "Ошибка ! " + r.message, "WARNING");
 
-            Fancybox.close();
-          }
-        });
-      }
-    });
-  });
-}
+//             Fancybox.close();
+//           }
+//         });
+//       }
+//     });
+//   });
+// }
 
 /**
  * Modal
@@ -693,3 +693,175 @@ if (document.querySelector("img.video__frame")) {
     });
   });
 }
+
+/**
+ * Form send
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  const forms = document.querySelectorAll("form.fetch");
+
+  if (forms.length > 0) {
+    forms.forEach((form) => {
+      form.addEventListener("submit", async (evt) => {
+        evt.preventDefault();
+
+        const yaGoal = form.querySelector("input[name='ya_goal']").value;
+        const phoneInput = form.querySelector("input[name='phone']");
+        const nameInput = form.querySelector("input[name='name']");
+        const phone = phoneInput.value;
+        const name = nameInput.value;
+
+        if (phone.length < 10 || phone.includes("_")) {
+          phoneInput.classList.add("is-error");
+          console.log("ошибка");
+          return;
+        }
+
+        if (name.length === 0) {
+          nameInput.classList.add("is-error");
+          return;
+        }
+
+        disableSubmitButtons(form, true);
+
+        const data = new FormData(form);
+        const send = prepareData(data);
+        send.ref = window.location.href;
+        send.cookies = getCookies();
+
+        try {
+          // Отправка данных в битрикс через sendJSON
+          sendJSON(send);
+
+          // Отправка данных на сервер
+          const response = await fetch(
+            "/wp-admin/admin-ajax.php?action=handle_form_submission",
+            {
+              method: "POST",
+              body: JSON.stringify(send),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+
+          const result = await response.json();
+
+          if (result.success) {
+            handleSuccess(form, yaGoal);
+          } else {
+            handleError(result.data.message);
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          handleError("Ошибка при отправке формы");
+        } finally {
+          disableSubmitButtons(form, false);
+        }
+      });
+    });
+  }
+
+  function disableSubmitButtons(form, disable) {
+    const submitButtons = form.querySelectorAll(
+      "input[type='submit'], button[type='submit']"
+    );
+    submitButtons.forEach((button) => {
+      button.disabled = disable;
+    });
+  }
+
+  // function prepareData(data) {
+  //   const send = {};
+  //   for (const [key, value] of data.entries()) {
+  //     if (key === "question") {
+  //       send["comment"] = value;
+  //     } else if (["name", "phone", "form_id"].includes(key)) {
+  //       send[key] = value;
+  //     }
+  //   }
+  //   return send;
+  // }
+  function prepareData(data) {
+    const send = {};
+    for (const [key, value] of data.entries()) {
+      if (key === "question") {
+        send["question"] = value;
+      } else if (
+        [
+          "name",
+          "phone",
+          "form_id",
+          "email_title",
+          "ya_goal",
+          "events_name",
+        ].includes(key)
+      ) {
+        send[key] = value;
+      }
+    }
+    return send;
+  }
+
+  function getCookies() {
+    const cookies = document.cookie.split(/;/);
+    const cookiesObj = {};
+    cookies.forEach((cookie) => {
+      const [key, value] = cookie.split(/=/);
+      cookiesObj[key.trim()] = value.trim();
+    });
+    return cookiesObj;
+  }
+
+  function handleSuccess(form, yaGoal) {
+    Fancybox.close();
+    clearForm(form);
+    setTimeout(() => {
+      fancyboxShow("#thanks", "inline");
+    }, 150);
+    setTimeout(() => {
+      Fancybox.close();
+    }, 4000);
+
+    if (typeof ym === "function") {
+      ym("92035751", "reachGoal", yaGoal);
+      console.log("Цель достигнута: " + yaGoal);
+    }
+    if (typeof gtag === "function") {
+      // gtag("event", "form_lead", {"event_category": "lead", "event_action": "zayavka"});
+    }
+  }
+
+  function handleError(message) {
+    toast("Внимание!", "Ошибка ! " + message, "WARNING");
+    Fancybox.close();
+  }
+
+  function clearForm(form) {
+    form.querySelectorAll("input, textarea").forEach((inp) => {
+      if (!["submit", "checkbox", "radio", "hidden"].includes(inp.type)) {
+        inp.value = "";
+        inp.parentNode.classList.remove("valid");
+      }
+    });
+    form.querySelectorAll("input[type='checkbox']").forEach((el) => {
+      if (el.name !== "agreement") el.checked = false;
+    });
+  }
+
+  function sendJSON(data) {
+    let xhr = new XMLHttpRequest();
+    let url = "/wp-content/themes/skinelly/ajax/bitrix_send.php";
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.addEventListener("readystatechange", () => {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log(xhr.responseText);
+      }
+    });
+
+    var json = JSON.stringify(data);
+
+    xhr.send(json);
+  }
+});
