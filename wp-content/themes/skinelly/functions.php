@@ -704,8 +704,7 @@ function handle_form_submission()
 		$utm_term = isset($_GET['utm_term']) ? sanitize_text_field($_GET['utm_term']) : (isset($_COOKIE['utm_term']) ? sanitize_text_field($_COOKIE['utm_term']) : '');
 		$utm_content = isset($_GET['utm_content']) ? sanitize_text_field($_GET['utm_content']) : (isset($_COOKIE['utm_content']) ? sanitize_text_field($_COOKIE['utm_content']) : '');
 
-		// $to = 'noreply1@skinelly.ru, noreply@skinelly.ru, shevarev@dekalaser.ru, sales@marketing-na100.ru, ai@mna100.ru';
-		$to = 'ai@mna100.ru';
+		$to = 'noreply1@skinelly.ru, noreply@skinelly.ru, shevarev@dekalaser.ru, sales@marketing-na100.ru, ai@mna100.ru';
 		$subject = 'Заявка с сайта Skinelly';
 
 		$message = '';
