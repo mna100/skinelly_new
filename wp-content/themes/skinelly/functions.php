@@ -696,6 +696,7 @@ function handle_form_submission()
 		$ya_goal = isset($input['ya_goal']) ? sanitize_text_field($input['ya_goal']) : '';
 		$form_id = isset($input['form_id']) ? sanitize_text_field($input['form_id']) : '';
 		$events_name = isset($input['events_name']) ? sanitize_text_field($input['events_name']) : '';
+		$referrer = isset($_SERVER['HTTP_REFERER']) ? sanitize_text_field($_SERVER['HTTP_REFERER']) : '';
 
 		// Извлекаем UTM-метки из запроса или куки
 		$utm_source = isset($_GET['utm_source']) ? sanitize_text_field($_GET['utm_source']) : (isset($_COOKIE['utm_source']) ? sanitize_text_field($_COOKIE['utm_source']) : '');
@@ -732,6 +733,9 @@ function handle_form_submission()
 		}
 		if (!empty($events_name)) {
 			$message .= 'Название события: ' . esc_html($events_name) . '<br>';
+		}
+		if (!empty($referrer)) {
+			$message .= 'Страница отправки: ' . esc_html($referrer) . '<br>';
 		}
 
 		// Добавляем UTM-метки в сообщение
